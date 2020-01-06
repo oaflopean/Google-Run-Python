@@ -3,20 +3,18 @@ import os
 import time
 import math
 list= glob.glob('*.txt')
+print("TEXT FILES:")
 wordcount=0
-for file in list:
-    #print(file+" is being monitored by this script while running")
-    #print(open(file).read())
-    wordcount= wordcount+len(open(file).read().split(' '))
-statfile=open("stats.txt", mode="a")
-print("Below are the text files being monitored by this script. To add a text file to this list, create the file ending in '.txt', then run script.py again")
 for x in list:
-    print(x+ " "+str(len(open(x).read().split(' ')))+" words")
+    wordcount2= len(open(x).read().split(' '))
+    print(x+ ": "+str(wordcount2)+" words")
+    wordcount=wordcount+wordcount2
 print(str(wordcount)+" total words")
 timer=int(input("Sprint for how many minutes?"))
 waiting=0
 wordcount3=wordcount
 message="Begin sprint!"
+statfile=open("stats.txt", mode="a")
 statfile.write("Duration (minutes): " +str(timer)+"\n")
 
 while waiting!=timer*60:
