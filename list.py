@@ -8,7 +8,7 @@ delete.write("")
 delete.close()
 usb = open("list.txt", mode="a")
 
-for num in file.keys()[number-1:]:
+for num in sorted(file.keys()[number-1:]):
 
     #text = strip_headers(load_etext(int(num))).strip()
     title=str(file[num]["id"])+": "+file[num]["title"]
