@@ -22,7 +22,7 @@ for num in file.keys()[number-1:]:
     filename=filename.replace("/","").replace("\"","").replace(":",";").replace(".",",").replace(",","").replace("?","").replace("!","") + ".txt"
     #usb.write(text.encode('utf8'))
     #usb.close()
-    print(str(number)+". "+filename)
-    usb.write(str(number)+ ". " + filename.encode("utf8")+"\n")
+    print(filename)
+    usb.write(filename.encode("utf8")+"\n")
     number+=1
 usb.close()
